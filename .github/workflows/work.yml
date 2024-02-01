@@ -3,9 +3,9 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "15,30,35,45 * * * *"
-env:
-  GITHUB_TOKEN: "${{ secrets.AUTO_COMMITTER_TOKEN }}"
+    - cron: "15,30,45 * * * *"
+# env:
+#   GITHUB_TOKEN: "${{ secrets.AUTO_COMMITTER_TOKEN }}"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
           git status
           git add -A
           git commit -a -m "Updated MS Graph integration to $date"
-          git remote set-url origin "https://x-access-token:${{ env.GITHUB_TOKEN }}@github.com/worldr/teams-custom-tab"
-          git push
+          # git remote set-url origin "https://x-access-token:${{ env.GITHUB_TOKEN }}@github.com/worldr/teams-custom-tab"
+          # git push
