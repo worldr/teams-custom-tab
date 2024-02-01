@@ -1,0 +1,25 @@
+name: work
+
+on:
+  schedule:
+    # Syntax: https://crontab.guru
+    - cron: "1 0-23 * * *"
+
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ">=20.10.0"
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Install dependencies
+        run: |
+          echo Installing dependencies.
+          npm i
+      - name: Work
+        run: |
+          echo 1
+          git status
