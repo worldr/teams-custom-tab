@@ -1,4 +1,4 @@
-# Custome Tab App for Microsoft Teams
+# Custom Tab App for Microsoft Teams
 
 ## dependencies
 
