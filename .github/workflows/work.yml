@@ -3,8 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "3,6,9,12,15,18,21,24,27,30 0-23 * * *"
-
+    - cron: "14,15,16,17 0-23 * * *"
 env:
   GITHUB_TOKEN: ${{ secrets.AUTO_COMMITTER_TOKEN }}
 jobs:
@@ -18,12 +17,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Install dependencies
-        run: |
-          echo Installing dependencies.
-          npm i
+        run: npm i
       - name: Work
         run: |
-          set -x
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
           sed -i -r "s/@@@/$date/" ./src/Base.vue
@@ -31,6 +27,6 @@ jobs:
           sed -i -r "s/@@@/$date/" ./src/core/Version.ts
           git add -A
           git commit -a -m "Updated MS Graph integration to $date"
-          echo ${{ github.workspace }}
+          echo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@${{ github.workspace }}
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@${{ github.workspace }}
           git push
