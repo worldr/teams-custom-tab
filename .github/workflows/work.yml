@@ -23,6 +23,7 @@ jobs:
           npm i
       - name: Work
         run: |
+          set -x
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
           sed -i -r "s/@@@/$date/" ./src/Base.vue
