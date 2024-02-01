@@ -1,0 +1,5 @@
+# Using vue-eslint-parser and @typescript-eslint/parser, the automatic/default rule to ignore this file does not work
+.eslintrc.js
+vite.config.ts
+.eslintrc.js
+env.d.ts

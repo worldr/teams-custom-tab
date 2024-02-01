@@ -1,0 +1,13 @@
+name: notifications
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  notifications:
+    name: process
+    uses: worldr/common-pipeline/.github/workflows/notifications.yaml@main
+    secrets:
+      ASANA_SECRET: ${{ secrets.ASANA_SECRET }}
+      TASK_MANAGER_TOKEN: ${{ secrets.TASK_MANAGER_TOKEN }}

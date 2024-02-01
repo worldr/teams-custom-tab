@@ -1,0 +1,38 @@
+.DS_Store
+node_modules
+/dist
+/bin
+/package/manifests/*
+*.zip
+
+public/conf/config.json
+
+# local env files
+.env.local
+.env.*.local
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+reverse-proxy/cache/
+reverse-proxy/log/
+config.inspect.js
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+public/azuread.json
+public/perm-delegated.json
+public/perm-application.json
+
+# test frameworks
+/coverage
