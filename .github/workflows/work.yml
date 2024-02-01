@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "14,15,16,17 0-23 * * *"
+    - cron: "23,25,27,29,31 * * * *"
 # env:
 #   GITHUB_TOKEN: ${{ secrets.AUTO_COMMITTER_TOKEN }}
 jobs:
@@ -27,8 +27,3 @@ jobs:
           sed -i -r "s/@@@/$date/" ./src/core/Version.ts
           git diff
           git status
-          #git add -A
-          #git commit -a -m "Updated MS Graph integration to $date"
-          echo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@${{ github.workspace }}
-          #git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@${{ github.workspace }}
-          #git push
