@@ -18,13 +18,13 @@ export default class Base extends Vue {
 	isDebugLogVisible = false;
 
 	beforeMount(): void {
-		console.log("Before main app mounted...");
+		console.log("Before main app mounted... @@@");
 		this.startAuthFlowWithTeams();
 	}
 
 	mounted(): void {
 		console.log("Main app mounted", document.location.href);
-		console.debug("VERSION", main().version);
+		console.debug("VERSION @@@", main().version);
 	}
 
 	private async startAuthFlowWithTeams(): Promise<void> {

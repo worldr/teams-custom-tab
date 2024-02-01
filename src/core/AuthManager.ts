@@ -21,7 +21,7 @@ export class AuthManager {
 
 	async startMsFlow(): Promise<void> {
 		const msState = Promise.resolve({});
-		console.info("AUTHORISATION:", {
+		console.info("AUTHORISATION @@@:", {
 			"Has ms auth data": ms != null,
 		});
 		if (msState == null) {
