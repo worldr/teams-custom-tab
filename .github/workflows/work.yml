@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "7,9,11,13 * * * *"
+    - cron: "0/3 * * * *"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -17,10 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Work
-        env:
-          committer_email: ${{ vars.COMMITTER_EMAIL }}
-          committer_name: ${{ vars.COMMITTER_NAME }}
-          token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           set -x
           date=$(date -u)
@@ -35,4 +31,4 @@ jobs:
           git status
           git commit -a -m "Updated MS Graph integration to $date"
           git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
-          # git push
+          git push
