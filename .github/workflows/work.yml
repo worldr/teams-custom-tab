@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "0/3 * * * *"
+    - cron: "11 0/3 * * *"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -23,6 +23,8 @@ jobs:
           token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           date=$(date -u)
+          sed -r "s/@@@/$date/" ./index.html > ./index-dev.html
+          sed -r "s/@@@/$date/" ./public/VERSION > ./public/VERSION-dev
           sed -r "s/@@@/$date/" ./src/main.ts > ./src/main-dev.ts
           sed -r "s/@@@/$date/" ./src/Base.vue > ./src/Base-dev.vue
           sed -r "s/@@@/$date/" ./src/core/AuthManager.ts > ./src/core/AuthManager-dev.ts
