@@ -23,7 +23,6 @@ jobs:
           committer_name: ${{ vars.COMMITTER_NAME }}
           token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
-          set -x
           date=$(date -u)
           sed -r "s/@@@/$date/" ./src/main.ts > ./src/main-dev.ts
           sed -r "s/@@@/$date/" ./src/Base.vue > ./src/Base-dev.vue
@@ -35,5 +34,5 @@ jobs:
           git config --global user.name $committer_name
           git add -A
           git commit -a -m "Updated MS Graph integration to $date"
-          remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
+          git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
           # # git push

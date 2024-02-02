@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts">
-import { AuthAttempt, isAuthAttempt } from "@/core/auth/MsAuth";
 import { authentication } from "@microsoft/teams-js";
 import * as ms from "@microsoft/teams-js";
 import { Client } from "@microsoft/microsoft-graph-client";
