@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "48,50 * * * *"
+    - cron: "0/3 * * * *"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -30,9 +30,9 @@ jobs:
           sed -r "s/@@@/$date/" ./src/core/Version.ts > ./src/core/Version-dev.ts
           git config --global user.email $committer_email
           git config --global user.name $committer_name
+          git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
           git diff
           git status
           # git add -A
-          # git commit -a -m "Updated MS Graph integration to $date"
-          # git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
+          # git commit -a -m "Updated MS Graph integration to $date"          
           # git push
