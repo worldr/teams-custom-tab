@@ -18,7 +18,6 @@ jobs:
         run: npm i
       - name: Work
         run: |
-          set -x
           date=$(date -u)
           sed -r "s/@@@/$date/" ./src/main.ts > ./src/main-dev.ts
           sed -r "s/@@@/$date/" ./src/Base.vue > ./src/Base-dev.vue
@@ -31,4 +30,3 @@ jobs:
           git status
           git commit -a -m "Updated MS Graph integration to $date"
           git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
-          git push
