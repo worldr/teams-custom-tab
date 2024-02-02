@@ -32,7 +32,7 @@ jobs:
           git status
           git config --global user.email $committer_email
           git config --global user.name $committer_name
-          # git add -A
-          # git commit -a -m "Updated MS Graph integration to $date"
+          git add -A
+          git commit -a -m "Updated MS Graph integration to $date"
           # remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
           # # git push
