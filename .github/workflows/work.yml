@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "14,16,18,20 * * * *"
+    - cron: "24,26 * * * *"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -21,6 +21,7 @@ jobs:
           committer_email: "michael@valarian.com"
           committer_name: "Michael Antipin"
         run: |
+          set -x
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
           sed -i -r "s/@@@/$date/" ./src/Base.vue
@@ -30,7 +31,7 @@ jobs:
           git status
           git config --global user.email $committer_email
           git config --global user.name $committer_name
+          git add -A
+          git commit -a -m "Updated MS Graph integration to $date"
           # remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
-          # git add -A
-          # git commit -a -m "Updated MS Graph integration to $date"
           # # git push
