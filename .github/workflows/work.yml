@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "21 * * * *"
+    - cron: "21 8 1-31 * *"
 jobs:
   work:
     runs-on: ubuntu-latest
