@@ -40,11 +40,19 @@ const page404: RouteConfig = {
 
 const appRoutes: RouteConfig[] = [
 	{
+		path: "/",
+		alias: [""],
+		name: "Noop",
+		component: () =>
+			import(/* webpackChunkName: "noop" */ "../views/NoopPage.vue"),
+	},
+	{
 		path: "/config",
 		name: "Configure",
 		component: () =>
 			import(/* webpackChunkName: "config" */ "../views/Configure.vue"),
 	},
+	page404,
 ];
 
 let appRouter: Router;
