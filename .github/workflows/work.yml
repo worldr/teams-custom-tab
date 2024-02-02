@@ -22,7 +22,7 @@ jobs:
           committer_email: ${{ vars.COMMITTER_EMAIL }}
           committer_name: ${{ vars.COMMITTER_NAME }}
         run: |
-          # set -x
+          set -x
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
           sed -i -r "s/@@@/$date/" ./src/Base.vue
