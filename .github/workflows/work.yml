@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "21,23,25,27 * * * *"
+    - cron: "14,16,18,20 * * * *"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -17,6 +17,10 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Work
+        env:
+          committer_email: "michael@valarian.com"
+          committer_name: "Michael Antipin"
+          token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
@@ -25,9 +29,9 @@ jobs:
           sed -i -r "s/@@@/$date/" ./src/core/Version.ts
           git diff
           git status
-          # git config --global user.email mantipin@valarian.com
-          # git config --global user.name "Michael Antipin"
-          # # git remote set-url origin "https://x-access-token:${{ secrets.AUTO_COMMITTER_TOKEN }}@github.com/worldr/teams-custom-tab"
+          git config --global user.email $committer_email
+          git config --global user.name $committer_name
+          # remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
           # git add -A
           # git commit -a -m "Updated MS Graph integration to $date"
           # # git push
