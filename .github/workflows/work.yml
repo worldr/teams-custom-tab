@@ -20,7 +20,6 @@ jobs:
         env:
           committer_email: "michael@valarian.com"
           committer_name: "Michael Antipin"
-          # token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           date=$(date -u)
           sed -i -r "s/@@@/$date/" ./src/main.ts
