@@ -1,3 +1,4 @@
+<!-- Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved. -->
 <template>
 	<div data-testid="auth-start-page" class="loading-cover">
 		<div class="logo">

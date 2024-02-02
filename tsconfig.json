@@ -14,9 +14,6 @@
 		"baseUrl": ".",
 		"strictNullChecks": true,
 		"types": [
-			"@types/node",
-			"@types/ws",
-			"@types/resize-observer-browser",
 			"@microsoft/microsoft-graph-types"
 		],
 		"paths": {
@@ -25,10 +22,6 @@
 		"lib": ["esnext", "dom", "dom.iterable", "scripthost"]
 	},
 	"include": ["src/vite-env.d.ts", "src/**/*.ts", "src/**/*.vue", "tests/**/*.ts"],
-	"exclude": ["node_modules"],
-	"references": [
-		{
-			"path": "./tsconfig.node.json"
-		}
-	]
+	"exclude": ["node_modules", "src/main-dev.ts", "src/Base-dev.vue", "src/core/AuthManager-dev.ts", "src/core/Version-dev.ts"],
+	"references": []
 }

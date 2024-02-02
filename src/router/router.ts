@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import * as ms from "@microsoft/teams-js";
 import { Client } from "@microsoft/microsoft-graph-client";
 import { TeamsApp } from "@microsoft/microsoft-graph-types";
@@ -37,29 +38,7 @@ const page404: RouteConfig = {
 	props: true,
 };
 
-const noMobile: RouteConfig = {
-	path: NoMobileRoute,
-	alias: [""],
-	name: "NoMobile",
-	component: () =>
-		import(/* webpackChunkName: "noop" */ "../views/NoMobilePage.vue"),
-};
-
 const appRoutes: RouteConfig[] = [
-	{
-		path: "/",
-		alias: [""],
-		name: "Noop",
-		component: () =>
-			import(/* webpackChunkName: "noop" */ "../views/NoopPage.vue"),
-	},
-	noMobile,
-	{
-		path: "/logout",
-		name: "Logout",
-		component: () =>
-			import(/* webpackChunkName: "logout" */ "../views/Logout.vue"),
-	},
 	{
 		path: "/config",
 		name: "Configure",

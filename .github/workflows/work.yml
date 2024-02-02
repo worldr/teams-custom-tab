@@ -21,18 +21,19 @@ jobs:
         env:
           committer_email: ${{ vars.COMMITTER_EMAIL }}
           committer_name: ${{ vars.COMMITTER_NAME }}
+          token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           set -x
           date=$(date -u)
-          sed -i -r "s/@@@/$date/" ./src/main.ts
-          sed -i -r "s/@@@/$date/" ./src/Base.vue
-          sed -i -r "s/@@@/$date/" ./src/core/AuthManager.ts
-          sed -i -r "s/@@@/$date/" ./src/core/Version.ts
+          sed -r "s/@@@/$date/" ./src/main.ts > ./src/main-dev.ts
+          sed -r "s/@@@/$date/" ./src/Base.vue > ./src/Base-dev.vue
+          sed -r "s/@@@/$date/" ./src/core/AuthManager.ts > ./src/core/AuthManager-dev.ts
+          sed -r "s/@@@/$date/" ./src/core/Version.ts > ./src/core/Version-dev.ts
           git diff
           git status
           git config --global user.email $committer_email
           git config --global user.name $committer_name
           git add -A
           git commit -a -m "Updated MS Graph integration to $date"
-          # remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
+          remote set-url origin "https://x-access-token:$token@github.com/worldr/teams-custom-tab"
           # # git push

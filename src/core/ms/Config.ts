@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import "isomorphic-fetch";
 
 export const CONFIG_PATH = `${process.env.BASE_URL}conf/config.json`;

@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import { Client, ResponseType } from "@microsoft/microsoft-graph-client";
 import * as ms from "@microsoft/teams-js";
 import { TeamsApp } from "@microsoft/microsoft-graph-types";

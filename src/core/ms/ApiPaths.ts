@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 export type KnownApiPath =
 	| "/$batch"
 	| "/me"

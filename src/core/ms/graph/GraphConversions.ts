@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import { ProfilePhoto, TeamsApp } from "@microsoft/microsoft-graph-types";
 import * as ms from "@microsoft/teams-js";
 import { Client } from "@microsoft/microsoft-graph-client";

@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import { Version } from "./Version";
 import { Config } from "./ms/Config";
 import { Router } from "vue-router";

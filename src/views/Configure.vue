@@ -1,3 +1,4 @@
+<!-- Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved. -->
 <template>
 	<div data-testid="configure-page" class="container">
 		<div class="banner"></div>

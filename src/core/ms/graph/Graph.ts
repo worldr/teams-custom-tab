@@ -1,3 +1,4 @@
+// Copyright © 2020-present Worldr Technologies Limited. All Rights Reserved.
 import {
 	AuthenticationProvider,
 	AuthenticationProviderOptions,
