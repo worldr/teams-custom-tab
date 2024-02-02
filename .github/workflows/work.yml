@@ -25,9 +25,9 @@ jobs:
           sed -i -r "s/@@@/$date/" ./src/core/Version.ts
           git diff
           git status
-          git config --global user.email mantipin@worldr.com
+          git config --global user.email mantipin@valarian.com
           git config --global user.name "Michael Antipin"
           # git remote set-url origin "https://x-access-token:${{ secrets.AUTO_COMMITTER_TOKEN }}@github.com/worldr/teams-custom-tab"
           git add -A
           git commit -a -m "Updated MS Graph integration to $date"
-          git push
+          # git push
