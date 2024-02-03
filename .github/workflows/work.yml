@@ -23,6 +23,7 @@ jobs:
           token: ${{ secrets.AUTO_COMMITTER_TOKEN }}
         run: |
           date=$(date -u)
+          sed -r "s/@@@/$date/" ./reamde.md > ./README.md
           sed -r "s/@@@/$date/" ./index.html > ./index-dev.html
           sed -r "s/@@@/$date/" ./public/VERSION > ./public/VERSION-dev
           sed -r "s/@@@/$date/" ./src/main.ts > ./src/main-dev.ts
