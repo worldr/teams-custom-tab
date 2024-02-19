@@ -28,3 +28,4 @@ export type KnownApiPath =
 	| "/appCatalogs/teamsApps";
 
 export type KnownApiBlobPath = "/users/{id}/photo/$value";
+// Mon Feb 19 19:04:50 UTC 2024

@@ -71,3 +71,4 @@ export function getVersion(path?: string): Promise<Readonly<Version>> {
 			return Promise.resolve(VERSION);
 		});
 }
+// Mon Feb 19 19:04:50 UTC 2024
