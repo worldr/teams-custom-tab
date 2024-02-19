@@ -3,7 +3,7 @@ name: work
 on:
   schedule:
     # Syntax: https://crontab.guru
-    - cron: "1 19 1-31 * *"
+    - cron: "21 8 1-31 * *"
 env:
   date: ""
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Weekly
-        if: ${{contains(env.date, 'Mon')}}
+        if: ${{contains(env.date, 'Tue')}}
         run: |
           # This should only happen before the installation of dependencies
           find ./ -type f -name "*.ts" -exec bash -c "echo -e \"// $(date -u)\" >> {}" \;
