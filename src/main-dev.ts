@@ -50,7 +50,7 @@ export const initializer = Promise.all([getVersion(), getConfig()])
 			console.error(err);
 		};
 		app.config.warnHandler = (msg, vm, trace) => {
-			console.warn("Vue warning Sun Jun 30 08:26:33 UTC 2024:", msg, new Error().stack ?? "");
+			console.warn("Vue warning Mon Jul  1 08:28:09 UTC 2024:", msg, new Error().stack ?? "");
 			console.warn(trace);
 		};
 
