@@ -22,7 +22,7 @@ export class AuthManager {
 
 	async startMsFlow(): Promise<void> {
 		const msState = Promise.resolve({});
-		console.info("AUTHORISATION Thu Oct  3 08:30:06 UTC 2024:", {
+		console.info("AUTHORISATION Fri Oct  4 08:29:58 UTC 2024:", {
 			"Has ms auth data": ms != null,
 		});
 		if (msState == null) {
