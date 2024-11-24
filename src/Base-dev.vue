@@ -19,13 +19,13 @@ export default class Base extends Vue {
 	isDebugLogVisible = false;
 
 	beforeMount(): void {
-		console.log("Before main app mounted... Sat Nov 23 08:29:09 UTC 2024");
+		console.log("Before main app mounted... Sun Nov 24 08:29:19 UTC 2024");
 		this.startAuthFlowWithTeams();
 	}
 
 	mounted(): void {
 		console.log("Main app mounted", document.location.href);
-		console.debug("VERSION Sat Nov 23 08:29:09 UTC 2024", main().version);
+		console.debug("VERSION Sun Nov 24 08:29:19 UTC 2024", main().version);
 	}
 
 	private async startAuthFlowWithTeams(): Promise<void> {
