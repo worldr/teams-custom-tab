@@ -24,7 +24,10 @@ jobs:
           # This should only happen before the installation of dependencies
           find ./ -type f -name "*.ts" -exec bash -c "echo -e \"// $(date -u)\" >> {}" \;
       - name: Install dependencies
-        run: npm i
+        run: |
+          npm i --force
+          npm update --force
+          npm audit fix --force
       - name: Daily
         env:
           committer_email: ${{ vars.COMMITTER_EMAIL }}
@@ -43,5 +46,5 @@ jobs:
           git remote set-url origin "https://x-access-token:$token@github.com/${{ github.repository }}"
           git status
           git add -A
-          git commit -a -m "Updated MS Graph integration to $date"          
+          git commit -a -m "Updated MS Graph integration to $date"
           git push
